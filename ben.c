@@ -14,7 +14,8 @@ int main(int ac, char **av)
 
 	while (1)
 	{
-		write(STDOUT_FILENO, "Ben -> $", 9);
+		if (isatty(STDIN_FILENO))
+			write(STDOUT_FILENO, "Ben -> $", 9);
 		fflush(stdout);
 		read_input(user);
 	}
