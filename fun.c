@@ -7,19 +7,6 @@
 
 void read_input(char *user)
 {
-/*
- *	size_t size = 0;
-	int numRead = 0;
-
-	user = NULL;
-
-	numRead = getline(&user, &size, stdin);
-	if (numRead == -1)
-	{
-		perror("getline");
-		exit(EXIT_FAILURE);
-	}
-*/
 	user = _getline();
 	parse(user);
 	free(user);
@@ -47,7 +34,7 @@ void parse(char *buff)
 	cmd = _strtok(buffer, " \n");
 	while (cmd != NULL)
 	{
-		av[i] = strdup(cmd);
+		av[i] = _strdup(cmd);
 		strcpy(av[i], cmd);
 		cmd = _strtok(NULL, " \n");
 		i++;
@@ -55,7 +42,7 @@ void parse(char *buff)
 	av[i] = NULL;
 	path = path_finder(av[0]);
 	run(path, av);
-
+	free(path);
 	for (j = 0; j < i; j++)
 		free(av[j]);
 	free(av);

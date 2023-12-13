@@ -18,6 +18,7 @@ int main(int ac, char **av)
 		fflush(stdout);
 		read_input(user);
 	}
+	free(user);
 	return (0);
 }
 
