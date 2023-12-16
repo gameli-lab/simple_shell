@@ -1,4 +1,4 @@
-#include "ben_&_Dani.h"
+#include "ben.h"
 
 /**
  * main - entry point
@@ -15,7 +15,7 @@ int main(int ac, char **av)
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
-			write(STDOUT_FILENO, "Ben and Dani -> $", 9);
+			write(STDOUT_FILENO, "Ben and Dani -> $", 18);
 		fflush(stdout);
 		read_input(user);
 	}
